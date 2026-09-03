@@ -16,13 +16,13 @@ class CosmeticsManagerApp extends StatelessWidget {
         useMaterial3: true,
         colorSchemeSeed: Colors.pink,
       ),
-      home: const HomePage(),
+      home: const DashboardPage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class DashboardPage extends StatelessWidget {
+  const DashboardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,13 +31,46 @@ class HomePage extends StatelessWidget {
         title: const Text('Cosmetics Manager'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'የኮስሜቲክስ አስተዳደር',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            const Text(
+              'የኮስሜቲክስ አስተዳደር',
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 25),
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.inventory_2),
+                title: const Text('የእቃ ክምችት'),
+                subtitle: const Text('ያሉትን እቃዎች ይመልከቱ'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {},
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.shopping_cart),
+                title: const Text('ሽያጭ'),
+                subtitle: const Text('አዲስ ሽያጭ ይመዝግቡ'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {},
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.bar_chart),
+                title: const Text('ሪፖርት'),
+                subtitle: const Text('ዕለታዊ፣ ሳምንታዊ እና ወርሃዊ'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {},
+              ),
+            ),
+          ],
         ),
       ),
     );
